@@ -1,0 +1,174 @@
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:#0a0a0a;
+color:white;
+scroll-behavior:smooth;
+}
+
+h1,h2,h3{
+font-family:'Playfair Display',serif;
+}
+
+.hero{
+height:100vh;
+background:url('images/hero.jpg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.overlay{
+background:rgba(0,0,0,0.6);
+padding:40px;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+button{
+padding:14px 30px;
+background:#d4af37;
+border:none;
+color:black;
+font-weight:bold;
+cursor:pointer;
+border-radius:30px;
+transition:0.3s;
+}
+
+button:hover{
+box-shadow:0 0 20px #d4af37;
+transform:scale(1.05);
+}
+
+section{
+padding:100px 10%;
+}
+
+.about-container{
+display:flex;
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:45%;
+border-radius:10px;
+}
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.menu-card{
+background:#111;
+padding:20px;
+border-radius:10px;
+text-align:center;
+transition:0.4s;
+}
+
+.menu-card img{
+width:100%;
+border-radius:10px;
+}
+
+.menu-card:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 30px rgba(212,175,55,0.4);
+}
+
+.reviews{
+text-align:center;
+}
+
+.review-card{
+background:#111;
+padding:40px;
+border-radius:10px;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.1);
+}
+
+footer{
+background:black;
+padding:40px;
+text-align:center;
+}
+
+.footer-buttons a{
+color:#d4af37;
+margin:0 10px;
+text-decoration:none;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+align-items:center;
+justify-content:center;
+}
+
+.modal-content{
+background:#111;
+padding:40px;
+border-radius:10px;
+width:350px;
+text-align:center;
+}
+
+.modal input{
+width:100%;
+padding:10px;
+margin:10px 0;
+background:#222;
+border:none;
+color:white;
+}
+
+.close{
+float:right;
+cursor:pointer;
+font-size:22px;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
