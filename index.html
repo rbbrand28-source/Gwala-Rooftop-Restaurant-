@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gwala Rooftop Restaurant</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<div class="overlay">
+
+<h1>Gwala Rooftop Restaurant</h1>
+
+<p>Authentic Vegetarian Dining Experience in Mandawa</p>
+
+<button id="reserveBtn">Reserve a Table</button>
+
+</div>
+
+</header>
+
+
+<section class="about reveal">
+
+<div class="about-container">
+
+<img src="images/gallery/restaurant1.jpg">
+
+<div class="about-text">
+
+<h2>About Gwala Rooftop Restaurant</h2>
+
+<p>
+A rooftop style vegetarian restaurant located near the beautiful
+Radhika Haveli in Mandawa.
+
+Known for delicious Indian dishes, friendly staff,
+and a relaxing dining experience.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="menu reveal">
+
+<h2>Our Menu</h2>
+
+<div class="menu-grid">
+
+<div class="menu-card">
+
+<img src="images/menu/paneer-angara.jpg">
+
+<h3>Paneer Angara</h3>
+
+</div>
+
+<div class="menu-card">
+
+<img src="images/menu/cold-coffee.jpg">
+
+<h3>Cold Coffee</h3>
+
+</div>
+
+<div class="menu-card">
+
+<img src="images/menu/sandwich.jpg">
+
+<h3>Tomato Cheese Toast Sandwich</h3>
+
+</div>
+
+<div class="menu-card">
+
+<img src="images/menu/paneer-angara.jpg">
+
+<h3>Dal Tadka</h3>
+
+</div>
+
+<div class="menu-card">
+
+<img src="images/menu/cold-coffee.jpg">
+
+<h3>Butter Roti</h3>
+
+</div>
+
+<div class="menu-card">
+
+<img src="images/menu/sandwich.jpg">
+
+<h3>Veg Biryani</h3>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="reviews reveal">
+
+<h2>4.8 ⭐ (245 Reviews)</h2>
+
+<div class="swiper mySwiper">
+
+<div class="swiper-wrapper">
+
+<div class="swiper-slide review-card">
+Excellent food and great service. Staff was very friendly.
+</div>
+
+<div class="swiper-slide review-card">
+Best vegetarian food in Mandawa.
+</div>
+
+<div class="swiper-slide review-card">
+Paneer Angara is amazing!
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="gallery reveal">
+
+<h2>Gallery</h2>
+
+<div class="gallery-grid">
+
+<img src="images/gallery/restaurant1.jpg">
+
+<img src="images/gallery/restaurant2.jpg">
+
+<img src="images/gallery/food1.jpg">
+
+</div>
+
+</section>
+
+
+<footer>
+
+<h3>Gwala Rooftop Restaurant</h3>
+
+<p>Near Hotel Radhika Haveli, Mandawa, Rajasthan</p>
+
+<p>Open until 9:30 PM</p>
+
+<div class="footer-buttons">
+
+<a href="#">Instagram</a>
+
+<a href="https://maps.google.com">Google Maps</a>
+
+</div>
+
+</footer>
+
+
+<div class="modal" id="reservationModal">
+
+<div class="modal-content">
+
+<span class="close">&times;</span>
+
+<h2>Reserve Your Table</h2>
+
+<form id="bookingForm">
+
+<input type="text" placeholder="Name" required>
+
+<input type="tel" placeholder="Phone" required>
+
+<input type="number" placeholder="Number of People" required>
+
+<input type="date" required>
+
+<input type="time" required>
+
+<button type="submit">Book Now</button>
+
+</form>
+
+<p id="phoneReveal"></p>
+
+</div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
