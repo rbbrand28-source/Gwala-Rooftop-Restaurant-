@@ -1,0 +1,19 @@
+gwala-rooftop-restaurant/
+│
+├── index.html
+├── style.css
+├── script.js
+│
+├── images/
+│   ├── hero.jpg
+│   ├── menu/
+│   │   ├── paneer-angara.jpg
+│   │   ├── cold-coffee.jpg
+│   │   └── sandwich.jpg
+│   │
+│   ├── gallery/
+│   │   ├── restaurant1.jpg
+│   │   ├── restaurant2.jpg
+│   │   └── food1.jpg
+│
+└── README.md
