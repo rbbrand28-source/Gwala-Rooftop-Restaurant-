@@ -1,100 +1,91 @@
-const reserveBtn = document.getElementById("reserveBtn");
-const modal = document.getElementById("bookingModal");
-const closeBtn = document.querySelector(".close");
+const modal=document.getElementById("bookingModal")
+const reserveBtn=document.getElementById("reserveBtn")
+const floatingBtn=document.getElementById("floatingBtn")
+const close=document.querySelector(".close")
 
-reserveBtn.onclick = () => {
-modal.style.display = "flex";
-};
+reserveBtn.onclick=()=>modal.style.display="flex"
+floatingBtn.onclick=()=>modal.style.display="flex"
 
-closeBtn.onclick = () => {
-modal.style.display = "none";
-};
+close.onclick=()=>modal.style.display="none"
 
-window.onclick = (e)=>{
-if(e.target == modal){
-modal.style.display="none";
+window.onclick=(e)=>{
+if(e.target==modal){
+modal.style.display="none"
 }
-};
-
-
-
-function showStep(step){
-
-document.querySelectorAll(".step").forEach(s=>{
-s.classList.remove("active");
-});
-
-document.getElementById(step).classList.add("active");
-
 }
 
+
+const step1=document.getElementById("step1")
+const step2=document.getElementById("step2")
+const step3=document.getElementById("step3")
+const step4=document.getElementById("step4")
+const confirmation=document.getElementById("confirmation")
 
 
 document.querySelectorAll(".people").forEach(btn=>{
-btn.onclick = ()=>{
-showStep("step2");
-};
-});
+btn.onclick=()=>{
+step1.classList.add("hidden")
+step2.classList.remove("hidden")
+}
+})
 
 
-
-document.querySelectorAll(".next")[0].onclick = ()=>{
-showStep("step3");
-};
-
-document.querySelectorAll(".next")[1].onclick = ()=>{
-showStep("step4");
-};
+date.onchange=()=>{
+step2.classList.add("hidden")
+step3.classList.remove("hidden")
+}
 
 
+time.onchange=()=>{
+step3.classList.add("hidden")
+step4.classList.remove("hidden")
+}
 
-document.getElementById("bookNow").onclick = ()=>{
-showStep("step5");
-};
+
+bookNow.onclick=()=>{
+
+step4.classList.add("hidden")
+
+confirmation.classList.remove("hidden")
+
+confirmation.innerHTML=
+`
+Your table request has been received.<br><br>
+For confirmation please call this number:<br>
+<strong>09660257312</strong>
+`
+
+}
 
 
-
-const swiper = new Swiper(".reviewSwiper",{
-
+const swiper=new Swiper(".review-slider",{
 loop:true,
-autoplay:{delay:3000}
-
-});
-
-
-
-function reveal(){
-
-const reveals=document.querySelectorAll(".reveal");
-
-reveals.forEach(el=>{
-
-const windowHeight=window.innerHeight;
-const elementTop=el.getBoundingClientRect().top;
-
-if(elementTop<windowHeight-100){
-el.classList.add("active");
+autoplay:{
+delay:3500
 }
-
-});
-
-}
-
-window.addEventListener("scroll",reveal);
+})
 
 
-
-const galleryImages=document.querySelectorAll(".gallery-img");
-const lightbox=document.getElementById("lightbox");
-const lightboxImg=document.getElementById("lightboxImg");
-
-galleryImages.forEach(img=>{
+document.querySelectorAll(".gallery-img").forEach(img=>{
 img.onclick=()=>{
-lightbox.style.display="flex";
-lightboxImg.src=img.src;
-};
-});
+lightbox.style.display="flex"
+lightboxImg.src=img.src
+}
+})
 
 lightbox.onclick=()=>{
-lightbox.style.display="none";
-};
+lightbox.style.display="none"
+}
+
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show")
+}
+})
+})
+
+document.querySelectorAll(".reveal").forEach(el=>{
+observer.observe(el)
+})
