@@ -9,23 +9,17 @@ h1,h2,h3{
 font-family:'Playfair Display',serif;
 }
 
-.section-title{
-text-align:center;
-font-size:40px;
-margin-bottom:50px;
-}
-
 .hero{
 height:100vh;
 background:url("images/hero.jpg") center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
-position:relative;
 text-align:center;
+position:relative;
 }
 
-.hero-overlay{
+.overlay{
 position:absolute;
 width:100%;
 height:100%;
@@ -38,7 +32,7 @@ z-index:2;
 }
 
 .hero h1{
-font-size:64px;
+font-size:60px;
 margin-bottom:10px;
 }
 
@@ -47,36 +41,29 @@ font-size:20px;
 margin-bottom:30px;
 }
 
-button{
-padding:14px 34px;
+.reserve-btn{
+padding:14px 36px;
 background:#d4af37;
 border:none;
-color:black;
 border-radius:30px;
 font-weight:600;
 cursor:pointer;
 transition:0.3s;
 }
 
-button:hover{
+.reserve-btn:hover{
+box-shadow:0 0 20px #d4af37;
 transform:scale(1.05);
-box-shadow:0 0 15px #d4af37;
 }
 
 section{
 padding:100px 10%;
 }
 
-.about-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.about-img{
-width:100%;
-border-radius:10px;
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
 }
 
 .menu-grid{
@@ -87,16 +74,14 @@ gap:30px;
 
 .menu-card{
 background:#111;
-padding:15px;
 border-radius:10px;
 overflow:hidden;
-transition:0.4s;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
+transition:0.3s;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
 
 .menu-card img{
 width:100%;
-border-radius:8px;
 transition:0.4s;
 }
 
@@ -104,26 +89,18 @@ transition:0.4s;
 transform:scale(1.1);
 }
 
-.menu-card:hover{
-transform:translateY(-10px);
-}
-
 .menu-card h3{
 text-align:center;
-margin-top:10px;
+padding:15px;
 }
 
 .reviews{
 text-align:center;
 }
 
-.rating-title{
-font-size:50px;
+.rating{
+font-size:48px;
 color:#d4af37;
-}
-
-.review-count{
-margin-bottom:40px;
 }
 
 .review-card{
@@ -134,14 +111,14 @@ border-radius:10px;
 
 .gallery-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
 }
 
 .gallery-img{
 width:100%;
-border-radius:10px;
 cursor:pointer;
+border-radius:10px;
 transition:0.4s;
 }
 
@@ -155,7 +132,7 @@ text-align:center;
 padding:40px;
 }
 
-.footer-icons a{
+.footer-links a{
 color:#d4af37;
 margin:0 10px;
 text-decoration:none;
@@ -168,7 +145,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.8);
+background:rgba(0,0,0,0.85);
 align-items:center;
 justify-content:center;
 }
@@ -177,11 +154,34 @@ justify-content:center;
 background:#111;
 padding:40px;
 border-radius:10px;
-width:350px;
+width:360px;
 text-align:center;
 }
 
-.modal input{
+.close{
+float:right;
+cursor:pointer;
+font-size:22px;
+}
+
+.step{
+display:none;
+}
+
+.step.active{
+display:block;
+}
+
+.options button{
+margin:10px;
+padding:10px 18px;
+background:#222;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+input{
 width:100%;
 padding:10px;
 margin:10px 0;
@@ -190,13 +190,19 @@ border:none;
 color:white;
 }
 
-.close{
-cursor:pointer;
-float:right;
-font-size:22px;
+#bookNow{
+background:#d4af37;
+color:black;
+border:none;
+padding:12px;
+width:100%;
 }
 
-.lightbox{
+.phone{
+color:#d4af37;
+}
+
+#lightbox{
 display:none;
 position:fixed;
 top:0;
@@ -208,9 +214,8 @@ align-items:center;
 justify-content:center;
 }
 
-.lightbox img{
+#lightbox img{
 max-width:90%;
-max-height:90%;
 }
 
 .reveal{
@@ -222,16 +227,4 @@ transition:1s;
 .reveal.active{
 opacity:1;
 transform:translateY(0);
-}
-
-@media(max-width:768px){
-
-.about-grid{
-grid-template-columns:1fr;
-}
-
-.hero h1{
-font-size:40px;
-}
-
 }
