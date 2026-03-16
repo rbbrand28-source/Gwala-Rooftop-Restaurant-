@@ -1,8 +1,6 @@
-const modal = document.getElementById("reservationModal");
 const reserveBtn = document.getElementById("reserveBtn");
+const modal = document.getElementById("bookingModal");
 const closeBtn = document.querySelector(".close");
-const form = document.getElementById("bookingForm");
-const confirmation = document.getElementById("confirmationMessage");
 
 reserveBtn.onclick = () => {
 modal.style.display = "flex";
@@ -18,26 +16,51 @@ modal.style.display="none";
 }
 };
 
-form.addEventListener("submit",function(e){
 
-e.preventDefault();
 
-confirmation.innerHTML = `
-Reservation request received.<br><br>
-For confirmation please call this number:<br>
-<strong>09660257312</strong>
-`;
+function showStep(step){
 
+document.querySelectorAll(".step").forEach(s=>{
+s.classList.remove("active");
 });
+
+document.getElementById(step).classList.add("active");
+
+}
+
+
+
+document.querySelectorAll(".people").forEach(btn=>{
+btn.onclick = ()=>{
+showStep("step2");
+};
+});
+
+
+
+document.querySelectorAll(".next")[0].onclick = ()=>{
+showStep("step3");
+};
+
+document.querySelectorAll(".next")[1].onclick = ()=>{
+showStep("step4");
+};
+
+
+
+document.getElementById("bookNow").onclick = ()=>{
+showStep("step5");
+};
+
 
 
 const swiper = new Swiper(".reviewSwiper",{
+
 loop:true,
-autoplay:{
-delay:3500
-},
-spaceBetween:30
+autoplay:{delay:3000}
+
 });
+
 
 
 function reveal(){
@@ -60,22 +83,18 @@ el.classList.add("active");
 window.addEventListener("scroll",reveal);
 
 
-gsap.from(".hero h1",{opacity:0,y:60,duration:1});
-gsap.from(".hero p",{opacity:0,y:40,duration:1,delay:0.3});
-gsap.from("#reserveBtn",{scale:0,duration:0.6,delay:0.6});
 
-
-const galleryImages = document.querySelectorAll(".gallery-img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
+const galleryImages=document.querySelectorAll(".gallery-img");
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=document.getElementById("lightboxImg");
 
 galleryImages.forEach(img=>{
-img.onclick = ()=>{
+img.onclick=()=>{
 lightbox.style.display="flex";
-lightboxImg.src = img.src;
+lightboxImg.src=img.src;
 };
 });
 
-lightbox.onclick = ()=>{
+lightbox.onclick=()=>{
 lightbox.style.display="none";
 };
