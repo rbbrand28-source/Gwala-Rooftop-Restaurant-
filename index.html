@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -10,20 +9,30 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
 
 </head>
 
-
 <body>
+
+<nav class="navbar">
+
+<div class="logo">Gwala Rooftop</div>
+
+<div class="nav-links">
+<a href="#menu">Menu</a>
+<a href="#reviews">Reviews</a>
+<a href="#gallery">Gallery</a>
+</div>
+
+</nav>
+
 
 <header class="hero">
 
-<div class="overlay"></div>
+<div class="hero-overlay"></div>
 
 <div class="hero-content">
 
@@ -40,19 +49,19 @@ Reserve a Table
 </header>
 
 
-<section class="menu reveal">
+<section id="menu" class="menu reveal">
 
-<h2 class="section-title">Our Menu</h2>
+<h2>Our Menu</h2>
 
 <div class="menu-grid">
 
 <div class="menu-card">
-<img src="images/menu/paneer-angara.jpg">
+<img src="images/menu/paneer.jpg">
 <h3>Paneer Angara</h3>
 </div>
 
 <div class="menu-card">
-<img src="images/menu/cold-coffee.jpg">
+<img src="images/menu/coffee.jpg">
 <h3>Cold Coffee</h3>
 </div>
 
@@ -62,17 +71,17 @@ Reserve a Table
 </div>
 
 <div class="menu-card">
-<img src="images/menu/paneer-angara.jpg">
+<img src="images/menu/dal.jpg">
 <h3>Dal Tadka</h3>
 </div>
 
 <div class="menu-card">
-<img src="images/menu/cold-coffee.jpg">
+<img src="images/menu/roti.jpg">
 <h3>Butter Roti</h3>
 </div>
 
 <div class="menu-card">
-<img src="images/menu/sandwich.jpg">
+<img src="images/menu/biryani.jpg">
 <h3>Veg Biryani</h3>
 </div>
 
@@ -81,28 +90,26 @@ Reserve a Table
 </section>
 
 
-<section class="reviews reveal">
+<section id="reviews" class="reviews reveal">
 
-<h2 class="rating">4.8 ⭐</h2>
-<p class="review-count">245 Reviews</p>
+<h2>4.8 ⭐</h2>
 
-<div class="swiper reviewSwiper">
+<p>245 Reviews</p>
+
+<div class="swiper review-slider">
 
 <div class="swiper-wrapper">
 
 <div class="swiper-slide review-card">
-★★★★★
-<p>"Excellent food and great service."</p>
+Excellent food and great service.
 </div>
 
 <div class="swiper-slide review-card">
-★★★★★
-<p>"Best vegetarian food in Mandawa."</p>
+Best vegetarian food in Mandawa.
 </div>
 
 <div class="swiper-slide review-card">
-★★★★★
-<p>"Paneer Angara is amazing."</p>
+Paneer Angara is amazing.
 </div>
 
 </div>
@@ -112,15 +119,16 @@ Reserve a Table
 </section>
 
 
-<section class="gallery reveal">
+<section id="gallery" class="gallery reveal">
 
-<h2 class="section-title">Gallery</h2>
+<h2>Gallery</h2>
 
 <div class="gallery-grid">
 
-<img src="images/gallery/restaurant1.jpg" class="gallery-img">
-<img src="images/gallery/restaurant2.jpg" class="gallery-img">
-<img src="images/gallery/food1.jpg" class="gallery-img">
+<img src="images/gallery/g1.jpg" class="gallery-img">
+<img src="images/gallery/g2.jpg" class="gallery-img">
+<img src="images/gallery/g3.jpg" class="gallery-img">
+<img src="images/gallery/g4.jpg" class="gallery-img">
 
 </div>
 
@@ -138,7 +146,6 @@ Reserve a Table
 <div class="footer-links">
 
 <a href="#">Instagram</a>
-
 <a href="https://maps.google.com">Google Maps</a>
 
 </div>
@@ -147,22 +154,22 @@ Reserve a Table
 
 
 
-<!-- BOOKING MODAL -->
+<button class="floating-book" id="floatingBtn">
+Reserve
+</button>
 
-<div class="modal" id="bookingModal">
+
+
+<div id="bookingModal" class="modal">
 
 <div class="modal-content">
 
 <span class="close">&times;</span>
 
-<div id="bookingSteps">
 
-<!-- Step 1 -->
-<div class="step active" id="step1">
+<div id="step1">
 
-<h3>How many people?</h3>
-
-<div class="options">
+<h3>Select Guests</h3>
 
 <button class="people">1–2</button>
 <button class="people">3–4</button>
@@ -171,77 +178,57 @@ Reserve a Table
 
 </div>
 
-</div>
 
-
-<!-- Step 2 -->
-<div class="step" id="step2">
+<div id="step2" class="hidden">
 
 <h3>Select Date</h3>
 
-<input type="date" id="dateInput">
-
-<button class="next">Next</button>
+<input type="date" id="date">
 
 </div>
 
 
-<!-- Step 3 -->
-<div class="step" id="step3">
+<div id="step3" class="hidden">
 
 <h3>Select Time</h3>
 
-<input type="time" id="timeInput">
+<select id="time">
 
-<button class="next">Next</button>
+<option>Lunch</option>
+<option>Evening</option>
+<option>Dinner</option>
+
+</select>
 
 </div>
 
 
-<!-- Step 4 -->
-<div class="step" id="step4">
+<div id="step4" class="hidden">
 
 <h3>Your Details</h3>
 
-<input type="text" placeholder="Name" id="nameInput">
+<input type="text" placeholder="Name">
 
-<input type="tel" placeholder="Phone Number" id="phoneInput">
+<input type="tel" placeholder="Phone">
 
 <button id="bookNow">Book Now</button>
 
 </div>
 
 
-<!-- Confirmation -->
-<div class="step" id="step5">
-
-<h3>Reservation Request Sent</h3>
-
-<p>
-Your table request has been received.
-For confirmation please call this number.
-</p>
-
-<h2 class="phone">09660257312</h2>
-
-</div>
-
-</div>
+<div id="confirmation" class="hidden"></div>
 
 </div>
 
 </div>
 
 
-
-<!-- LIGHTBOX -->
-
-<div id="lightbox">
-
+<div id="lightbox" class="lightbox">
 <img id="lightboxImg">
-
 </div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
 <script src="script.js"></script>
 
