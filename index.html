@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,15 +16,14 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
 </head>
+
 
 <body>
 
 <header class="hero">
 
-<div class="hero-overlay"></div>
+<div class="overlay"></div>
 
 <div class="hero-content">
 
@@ -30,36 +31,13 @@
 
 <p>Authentic Vegetarian Dining Experience in Mandawa</p>
 
-<button id="reserveBtn">Reserve a Table</button>
+<button id="reserveBtn" class="reserve-btn">
+Reserve a Table
+</button>
 
 </div>
 
 </header>
-
-
-<section class="about reveal">
-
-<div class="container about-grid">
-
-<img src="images/gallery/restaurant1.jpg" class="about-img">
-
-<div class="about-text">
-
-<h2>About Gwala Rooftop Restaurant</h2>
-
-<p>
-A rooftop style vegetarian restaurant located near the beautiful
-Radhika Haveli in Mandawa.
-
-Known for delicious Indian dishes, friendly staff,
-and a relaxing dining experience with authentic flavors.
-</p>
-
-</div>
-
-</div>
-
-</section>
 
 
 <section class="menu reveal">
@@ -105,8 +83,7 @@ and a relaxing dining experience with authentic flavors.
 
 <section class="reviews reveal">
 
-<h2 class="rating-title">4.8 ⭐</h2>
-
+<h2 class="rating">4.8 ⭐</h2>
 <p class="review-count">245 Reviews</p>
 
 <div class="swiper reviewSwiper">
@@ -115,7 +92,7 @@ and a relaxing dining experience with authentic flavors.
 
 <div class="swiper-slide review-card">
 ★★★★★
-<p>"Excellent food and great service. Staff is very friendly."</p>
+<p>"Excellent food and great service."</p>
 </div>
 
 <div class="swiper-slide review-card">
@@ -125,7 +102,7 @@ and a relaxing dining experience with authentic flavors.
 
 <div class="swiper-slide review-card">
 ★★★★★
-<p>"Paneer Angara is delicious."</p>
+<p>"Paneer Angara is amazing."</p>
 </div>
 
 </div>
@@ -158,7 +135,7 @@ and a relaxing dining experience with authentic flavors.
 
 <p>Open until 9:30 PM</p>
 
-<div class="footer-icons">
+<div class="footer-links">
 
 <a href="#">Instagram</a>
 
@@ -169,40 +146,102 @@ and a relaxing dining experience with authentic flavors.
 </footer>
 
 
-<div class="modal" id="reservationModal">
+
+<!-- BOOKING MODAL -->
+
+<div class="modal" id="bookingModal">
 
 <div class="modal-content">
 
 <span class="close">&times;</span>
 
-<h2>Reserve Your Table</h2>
+<div id="bookingSteps">
 
-<form id="bookingForm">
+<!-- Step 1 -->
+<div class="step active" id="step1">
 
-<input type="text" placeholder="Name" required>
+<h3>How many people?</h3>
 
-<input type="tel" placeholder="Phone" required>
+<div class="options">
 
-<input type="number" placeholder="Number of People" required>
-
-<input type="date" required>
-
-<input type="time" required>
-
-<button type="submit">Book Now</button>
-
-</form>
-
-<p id="confirmationMessage"></p>
+<button class="people">1–2</button>
+<button class="people">3–4</button>
+<button class="people">5–6</button>
+<button class="people">7+</button>
 
 </div>
 
 </div>
 
 
-<div id="lightbox" class="lightbox">
-<img id="lightbox-img">
+<!-- Step 2 -->
+<div class="step" id="step2">
+
+<h3>Select Date</h3>
+
+<input type="date" id="dateInput">
+
+<button class="next">Next</button>
+
 </div>
+
+
+<!-- Step 3 -->
+<div class="step" id="step3">
+
+<h3>Select Time</h3>
+
+<input type="time" id="timeInput">
+
+<button class="next">Next</button>
+
+</div>
+
+
+<!-- Step 4 -->
+<div class="step" id="step4">
+
+<h3>Your Details</h3>
+
+<input type="text" placeholder="Name" id="nameInput">
+
+<input type="tel" placeholder="Phone Number" id="phoneInput">
+
+<button id="bookNow">Book Now</button>
+
+</div>
+
+
+<!-- Confirmation -->
+<div class="step" id="step5">
+
+<h3>Reservation Request Sent</h3>
+
+<p>
+Your table request has been received.
+For confirmation please call this number.
+</p>
+
+<h2 class="phone">09660257312</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox">
+
+<img id="lightboxImg">
+
+</div>
+
 
 <script src="script.js"></script>
 
